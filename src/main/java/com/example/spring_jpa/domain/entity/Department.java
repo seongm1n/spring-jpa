@@ -31,4 +31,17 @@ public class Department {
 
     @OneToMany(mappedBy = "department")
     private List<Professor> professorList = new ArrayList<>();
+
+    public static Department createDepartment(String deptCode, String deptName, String location) {
+        Department department = new Department();
+        department.deptCode = deptCode;
+        department.deptName = deptName;
+        department.location = location;
+        return department;
+    }
+
+    public void updateDepartment(String deptName, String location) {
+        this.deptName = deptName;
+        this.location = location;
+    }
 }

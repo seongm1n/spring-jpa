@@ -35,4 +35,24 @@ public class Student {
 
     @OneToMany(mappedBy = "student")
     private List<Enrollment> enrollments = new ArrayList<>();
+
+    public static Student createStudent(String studentId, String name, int grade, String phone, Department department) {
+        Student student = new Student();
+        student.studentId = studentId;
+        student.name = name;
+        student.grade = grade;
+        student.phone = phone;
+        student.department = department;
+        return student;
+    }
+
+    public void updateStudent(String name, Integer grade, String phone) {
+        this.name = name;
+        this.grade = grade;
+        this.phone = phone;
+    }
+
+    public void changeDepartment(Department department) {
+        this.department = department;
+    }
 }
