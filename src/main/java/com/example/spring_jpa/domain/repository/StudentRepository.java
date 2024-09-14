@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    Optional<Student> findByStudentId(Long studentId);
+    Optional<Student> findByStudentId(String studentId);
     List<Student> findByDepartmentDeptCode(String deptCode);
 
     @Query("select s from Student s join fetch s.department where s.grade = :grade")
