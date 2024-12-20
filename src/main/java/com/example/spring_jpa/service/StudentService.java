@@ -21,7 +21,7 @@ public class StudentService {
     private final DepartmentRepository departmentRepository;
 
     @Transactional
-    public Long CreateStudent(StudentDto.Request.Create request) {
+    public Long createStudent(StudentDto.Request.Create request) {
         if (studentRepository.findByStudentId(request.getStudentId()).isPresent()) {
             throw new IllegalArgumentException("이미 존재하는 학번입니다.");
         }
